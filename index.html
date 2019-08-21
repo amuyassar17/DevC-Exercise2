@@ -1,11 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Exercise 2</title>
-</head>
-<body>
-    <center>
-        <h1>Kalkulator</h1>
-    </center>
-</body>
+<html>
+    <head>
+        <title>Exercise 2</title>
+    </head>
+    <style>
+        .form{
+        width: 235px;
+        margin:auto;
+        background: #3E3E3E;
+        border-radius: 1%;
+        box-shadow: 0px 3px 8px #000;
+    }
+    </style>
+     <body>
+        <div class="form">
+                <form name="form1" action="#">
+                    <h1 style="text-align: center">Kalkulator Sederhana</h1>
+                <input style="margin: 20px; width: 80%; padding: 5px;" type="text" id="x" />
+                <input style="margin: 20px; width: 80%; padding: 5px;" type="text" id="y" />
+                <input style="margin: 20px; width: 80%; padding: 5px;" type="text" name="hasil" disabled="true" /></p>
+                <select style="margin: 20px;" name="opt"></p>
+                 <option value="tambah"> + </option>
+                 <option value="kurang"> - </option>
+                 <option value="kali"> * </option>
+                 <option value="bagi"> / </option>
+                </select>
+                <input type="button" value="=" onClick="hitung()" />
+                <input type="button" value="CLEAR" onClick="resetForm()" />
+                </form>
+    </body>
+    <script>
+            function hitung(){
+            var myForm = document.form1;
+            var first=document.querySelector("#x").value;
+            var second=document.querySelector("#y").value;
+            var input=myForm.opt.value;
+            if (input=="tambah"){
+                var hasil = first + second
+            }
+            else if(input=="kurang"){
+                var hasil = first - second
+            }
+            else if(input=="kali"){
+                var hasil = first * second
+            }
+            else if(input=="bagi"){
+                var hasil = first / second
+            }
+            myForm.hasil.value = hasil;
+            }
+        
+            function resetForm(){
+            document.form1.reset();
+            }
+            
+        </script>
+
+   
 </html>
